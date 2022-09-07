@@ -1,0 +1,9 @@
+@import "assets/variables";
+
+.limit__container {
+  max-width: $limit__container;
+  width: 100%;
+}
+input, button{
+  outline: none;
+}
