@@ -4,6 +4,26 @@
   max-width: $limit__container;
   width: 100%;
 }
-input, button{
+
+input, button {
   outline: none;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* width */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: $background;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: $orange;
+  }
+
 }

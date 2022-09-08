@@ -5,6 +5,12 @@
 import LeftArrow from '@/components/Icons/Index/LeftArrow'
 import RightArrow from '@/components/Icons/Index/RightArrow'
 import FeedbackStar from '@/components/Icons/Index/FeedbackStar'
+import Flexible from '@/components/Icons/Index/Flexible'
+import Personal from '@/components/Icons/Index/Personal'
+import Comprehensive from '@/components/Icons/Index/Comprehensive'
+import Payment from "@/components/Icons/Index/Payment";
+import Trial from "@/components/Icons/Index/Trial";
+import Time from "@/components/Icons/Index/Time";
 
 export default {
   name: "Icon",
@@ -14,7 +20,13 @@ export default {
   components: {
     LeftArrow,
     RightArrow,
-    FeedbackStar
+    FeedbackStar,
+    Personal,
+    Comprehensive,
+    Flexible,
+    Payment,
+    Trial,
+    Time
   }
 }
 </script>
