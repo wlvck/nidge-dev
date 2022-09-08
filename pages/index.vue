@@ -17,28 +17,54 @@
 
       </div>
     </div>
-    <div style="background: #E5ECF7">
+    <div class="section8">
+      <FeedbackSlider>
+      </FeedbackSlider>
+    </div>
+    <div class="section9">
+      <div class="limit__container mx-auto">
+        <div class="partners d-flex align-start justify-space-between">
+          <h1>We’re going to became partners <br>
+            for the long run.</h1>
+          <div class="partners__info">
+            <p>Many IT companies, product teams choose us for their projects of varying complexity which creates amazing
+              experiences, creating first class products.</p>
+            <div class="partners__grid">
+              <img src="@/static/oh_logo_01.png" alt="">
+              <img src="@/static/oh_logo_02.png" alt="">
+              <img src="@/static/oh_logo_03.png" alt="">
+              <img src="@/static/oh_logo_07.png" alt="">
+              <img src="@/static/oh_logo_08.png" alt="">
+              <img src="@/static/oh_logo_09.png" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section10">
       <div class="limit__container mx-auto">
         <section class="submit__app d-flex align-center justify-space-between">
           <div>
             <h1>You don't know who to hire?</h1>
             <button class="btn-primary">Submit your application</button>
           </div>
-          <div class="animated">
-            <img src="@/static/animated.svg" alt="">
+          <div>
+            <img src="@/static/app.png" alt="">
           </div>
         </section>
       </div>
-    </div>
-    <div style="background: yellow">
-      <img src="@/static/animated.svg" alt="">
     </div>
   </div>
 </template>
 
 <script>
+import FeedbackSlider from "@/components/FeedbackSlider";
+
 export default {
-  name: 'Index'
+  name: 'Index',
+  components: {
+    FeedbackSlider
+  }
 }
 </script>
 <style lang="scss">
@@ -127,6 +153,49 @@ export default {
   height: 145px;
 }
 
+.partners {
+  padding: 160px 0 110px;
+
+  h1 {
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 130%;
+    letter-spacing: 0.02em;
+    color: #191F23;
+    max-width: 294px;
+  }
+
+  .partners__info {
+    max-width: 608px;
+
+    .partners__grid {
+      margin-top: 51px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-row-gap: 55px;
+
+      img {
+        max-width: 130px;
+      }
+    }
+  }
+
+  p {
+    font-weight: 400;
+    font-size: 18px;
+    margin: 0;
+    line-height: 28px;
+    letter-spacing: -0.01em;
+    color: #232226;
+
+  }
+}
+
+.section10 {
+  padding: 126px 0 121px;
+  background: #E5ECF7;
+}
+
 .submit__app {
   h1 {
     margin-bottom: 32px;
@@ -136,6 +205,15 @@ export default {
     max-width: 400px;
     letter-spacing: 0.02em;
     color: #131313;
+  }
+
+  img {
+    user-drag: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
   }
 }
 </style>
