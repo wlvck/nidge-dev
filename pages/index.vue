@@ -14,7 +14,39 @@
         </div>
       </div>
       <div class="d-flex align-center justify-center">
-        <img class="banner__img" src="@/static/banner__images.png" alt="">
+        <div
+          class="banner__grid"
+        >
+          <div class="d-flex flex-column grid__item">
+            <img src="@/static/user1.png" alt="">
+            <img src="@/static/user8.png" alt="">
+          </div>
+          <div class="d-flex flex-column grid__item">
+            <img src="@/static/user2.png" alt="">
+            <img src="@/static/user9.png" alt="">
+          </div>
+          <div class="d-flex flex-column grid__item">
+            <img src="@/static/user3.png" alt="">
+            <img src="@/static/user10.png" alt="">
+          </div>
+          <div class="d-flex flex-column grid__item">
+            <img src="@/static/user4.png" alt="">
+            <img src="@/static/user11.png" alt="">
+          </div>
+          <div class="d-flex flex-column grid__item">
+            <img src="@/static/user5.png" alt="">
+            <img src="@/static/user12.png" alt="">
+          </div>
+          <div class="d-flex flex-column grid__item">
+            <img src="@/static/user6.png" alt="">
+            <img src="@/static/user13.png" alt="">
+          </div>
+          <div class="d-flex flex-column grid__item">
+            <img src="@/static/user7.png" alt="">
+            <img src="@/static/user14.png" alt="">
+          </div>
+
+        </div>
       </div>
     </div>
     <div class="section2">
@@ -27,22 +59,26 @@
     </div>
     <div class="section3">
       <div class="limit__container mx-auto vertical__tabs">
-        <h2>Hire and Share</h2>
-        <p>Every element of our experience has been designed to facilitate interaction between clients and outstaff
-          companies.</p>
         <v-tabs vertical>
           <div>
-            <v-tab>
+            <h2>Hire and Share</h2>
+            <p>Every element of our experience has been designed to facilitate <br> interaction between clients and
+              out staff
+              companies.</p>
+            <v-tab class="d-flex align-center justify-space-between">
               Hire developer
+              <icon icon-name="TabArrow"/>
             </v-tab>
-            <v-tab>
+            <v-tab class="d-flex align-center justify-space-between">
               Share with developers
+              <icon icon-name="TabArrow"/>
             </v-tab>
-            <v-tab>
+            <v-tab class="d-flex align-center justify-space-between">
               Developers
+              <icon icon-name="TabArrow"/>
             </v-tab>
           </div>
-          <v-tab-item>
+          <v-tab-item transition="fade-transition" reverse-transition="fade-transition">
             <v-card flat>
               <v-card-text>
                 <ul class="list__group">
@@ -90,7 +126,7 @@
               </v-card-text>
             </v-card>
           </v-tab-item>
-          <v-tab-item>
+          <v-tab-item transition="fade-transition" reverse-transition="fade-transition">
             <v-card flat>
               <v-card-text>
                 <ul class="list__group">
@@ -139,7 +175,7 @@
               </v-card-text>
             </v-card>
           </v-tab-item>
-          <v-tab-item>
+          <v-tab-item transition="fade-transition" reverse-transition="fade-transition">
             <v-card flat>
               <v-card-text>
                 <ul class="list__group">
@@ -320,6 +356,10 @@ export default {
   padding: 12px;
   text-transform: inherit;
   color: #131313;
+
+  svg {
+    opacity: 0;
+  }
 }
 
 .v-tabs--vertical > .v-window {
@@ -329,6 +369,10 @@ export default {
 .v-tab--active {
   color: #00489D;
   background: #FFFFFF;
+
+  svg {
+    opacity: 1;
+  }
 }
 
 .v-tabs-slider-wrapper {

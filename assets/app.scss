@@ -1,5 +1,7 @@
 @import "assets/variables";
-@import "assets/home";
+@import "assets/main";
+@import "assets/auth";
+
 .limit__container {
   max-width: $limit__container;
   width: 100%;
@@ -26,6 +28,7 @@ html {
     background: $orange;
   }
 }
-.v-application ul, .v-application ol{
+
+.v-application ul, .v-application ol {
   padding-left: unset;
 }

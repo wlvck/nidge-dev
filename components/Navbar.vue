@@ -12,16 +12,18 @@
           <div class="nav-link">
             <nuxt-link to="/company">For developers</nuxt-link>
           </div>
-          <button
+          <nuxt-link
+            to="/auth/login"
             class="navbar__btn outlined"
           >
             Sign up
-          </button>
-          <button
+          </nuxt-link>
+          <nuxt-link
+            to=""
             class="navbar__btn notOutlined"
           >
             Hire developers
-          </button>
+          </nuxt-link>
         </div>
       </nav>
     </div>
@@ -62,12 +64,13 @@ export default {
 .navbar__btn {
   font-weight: 500;
   padding: 9px 32px;
+  text-decoration: none;
   border-radius: 8px;
   font-size: 16px;
   line-height: 135%;
   letter-spacing: 0.02em;
   outline: none;
-  color: #00489D;
+  color: #00489D !important;
   transition: $hover__transition;
   border: 1px solid $blue;
 }
@@ -78,17 +81,17 @@ export default {
 
   &:hover {
     background: $blue;
-    color: white;
+    color: white !important;
   }
 }
 
 .notOutlined {
   background: $blue;
-  color: white;
+  color: white !important;
 
   &:hover {
     background: white;
-    color: $blue;
+    color: $blue !important;
   }
 }
 </style>

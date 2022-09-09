@@ -11,6 +11,10 @@ import Comprehensive from '@/components/Icons/Index/Comprehensive'
 import Payment from "@/components/Icons/Index/Payment";
 import Trial from "@/components/Icons/Index/Trial";
 import Time from "@/components/Icons/Index/Time";
+import TabArrow from "@/components/Icons/Index/TabArrow";
+import Google from "@/components/Icons/auth/Google";
+import Facebook from "@/components/Icons/auth/Facebook";
+import Apple from "@/components/Icons/auth/Apple";
 
 export default {
   name: "Icon",
@@ -26,7 +30,11 @@ export default {
     Flexible,
     Payment,
     Trial,
-    Time
+    Time,
+    TabArrow,
+    Google,
+    Facebook,
+    Apple
   }
 }
 </script>
