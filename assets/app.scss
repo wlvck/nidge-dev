@@ -1,5 +1,5 @@
 @import "assets/variables";
-
+@import "assets/home";
 .limit__container {
   max-width: $limit__container;
   width: 100%;
@@ -25,5 +25,7 @@ html {
   ::-webkit-scrollbar-thumb {
     background: $orange;
   }
-
+}
+.v-application ul, .v-application ol{
+  padding-left: unset;
 }

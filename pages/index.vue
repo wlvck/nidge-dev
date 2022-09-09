@@ -25,6 +25,158 @@
       </div>
       <img src="@/static/N.png" alt="" class="absolute__n">
     </div>
+    <div class="section3">
+      <div class="limit__container mx-auto vertical__tabs">
+        <h2>Hire and Share</h2>
+        <p>Every element of our experience has been designed to facilitate interaction between clients and outstaff
+          companies.</p>
+        <v-tabs vertical>
+          <div>
+            <v-tab>
+              Hire developer
+            </v-tab>
+            <v-tab>
+              Share with developers
+            </v-tab>
+            <v-tab>
+              Developers
+            </v-tab>
+          </div>
+          <v-tab-item>
+            <v-card flat>
+              <v-card-text>
+                <ul class="list__group">
+                  <li class="list__item d-flex align-center">
+                    <div class="item__num">
+                      01
+                    </div>
+                    <div class="item__content">
+                      <div class="title">
+                        Search developers
+                      </div>
+                      <div class="primary_p">
+                        In the search, enter which developers you need. For example: Java developer or Python.
+                      </div>
+                      <button class="btn-primary">Find developers</button>
+                    </div>
+                  </li>
+                  <li class="list__item d-flex align-center">
+                    <div class="item__num">
+                      02
+                    </div>
+                    <div class="item__content">
+                      <div class="title">
+                        Find the right developer
+                      </div>
+                      <div class="primary_p">
+                        You can see his experience, reviews, sinority and so on to hire him for your projects.
+                      </div>
+                    </div>
+                  </li>
+                  <li class="list__item d-flex align-center">
+                    <div class="item__num">
+                      03
+                    </div>
+                    <div class="item__content">
+                      <div class="title">
+                        Hire a developer
+                      </div>
+                      <div class="primary_p">
+                        Negotiate with him about tasks and payment
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </v-card-text>
+            </v-card>
+          </v-tab-item>
+          <v-tab-item>
+            <v-card flat>
+              <v-card-text>
+                <ul class="list__group">
+                  <li class="list__item d-flex align-center">
+                    <div class="item__num">
+                      01
+                    </div>
+                    <div class="item__content">
+                      <div class="title">
+                        Register company
+                      </div>
+                      <div class="primary_p">
+                        Fill in all the necessary data for company registration and after checking the company you can
+                        add employees
+                      </div>
+                      <button class="btn-primary">Submit application</button>
+                    </div>
+                  </li>
+                  <li class="list__item d-flex align-center">
+                    <div class="item__num">
+                      02
+                    </div>
+                    <div class="item__content">
+                      <div class="title">
+                        Add developers
+                      </div>
+                      <div class="primary_p">
+                        Fill in the details of the developer to add him to the company and further work on the site
+                      </div>
+                    </div>
+                  </li>
+                  <li class="list__item d-flex align-center">
+                    <div class="item__num">
+                      03
+                    </div>
+                    <div class="item__content">
+                      <div class="title">
+                        Find clients
+                      </div>
+                      <div class="primary_p">
+                        You can share their CVs for clients and see the browsing statistics, etc.
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </v-card-text>
+            </v-card>
+          </v-tab-item>
+          <v-tab-item>
+            <v-card flat>
+              <v-card-text>
+                <ul class="list__group">
+                  <li class="list__item d-flex align-center">
+                    <div class="item__num">
+                      01
+                    </div>
+                    <div class="item__content">
+                      <div class="title">
+                        Apply
+                      </div>
+                      <div class="primary_p">
+                        Fill in the data on work and after verification you will have access to your account
+                      </div>
+                      <button class="btn-primary">Submit application</button>
+                    </div>
+                  </li>
+                  <li class="list__item d-flex align-center">
+                    <div class="item__num">
+                      02
+                    </div>
+                    <div class="item__content">
+                      <div class="title">
+                        Find clients
+                      </div>
+                      <div class="primary_p">
+                        You can share CVs for clients and see the browsing statistics, etc.
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </v-card-text>
+            </v-card>
+          </v-tab-item>
+        </v-tabs>
+      </div>
+    </div>
     <div class="section5">
       <div class="limit__container mx-auto d-flex justify-space-between align-center">
         <img src="@/static/business.png" alt="">
@@ -153,300 +305,33 @@ export default {
 }
 </script>
 <style lang="scss">
-@import "assets/variables";
-
-img {
-  user-drag: none;
-  -webkit-user-drag: none;
-  user-select: none;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
+.theme--light.v-tabs > .v-tabs-bar, .theme--light.v-sheet, .theme--light.v-tabs-items {
+  background-color: unset;
 }
 
-.primary_h1 {
-  font-weight: 600;
-  font-size: 32px;
-  line-height: 130%;
-  letter-spacing: 0.02em;
-  color: #191F23;
-}
-
-.primary_p {
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 140%;
-  letter-spacing: -0.01em;
-  color: #232226;
-}
-
-.wrapper {
-  padding-top: 56px;
-
-  button {
-    border-radius: 8px;
-  }
-}
-
-.btn-primary {
-  padding: 16px 48px;
-  background: $blue;
+.v-tab {
+  justify-content: start;
   font-weight: 500;
-  border-radius: 8px;
-  font-size: 18px;
-  width: max-content;
-  line-height: 135%;
-  text-align: center;
-  letter-spacing: 0.02em;
-  color: #FFFFFF;
+  width: 506px;
+  //width: 100%;
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: -0.01em;
+  padding: 12px;
+  text-transform: inherit;
+  color: #131313;
 }
 
-.section6__grid {
-  margin-top: 209px;
+.v-tabs--vertical > .v-window {
+  flex: 1 1 auto;
 }
 
-.banner__img {
-  margin-top: 157px;
-  width: 100%;
-  max-width: 1440px;
+.v-tab--active {
+  color: #00489D;
+  background: #FFFFFF;
 }
 
-.banner__content {
-
-  h2 {
-    margin: 0;
-    font-weight: 700;
-    font-size: 48px;
-    line-height: 110%;
-    text-align: center;
-    letter-spacing: 0.02em;
-    color: #131313;
-  }
-
-  p {
-    margin: 24px 0 0 0;
-    font-weight: 500;
-    font-size: 16px;
-    max-width: 521px;
-    line-height: 130%;
-    text-align: center;
-    letter-spacing: 0.02em;
-    color: #131313;
-  }
-
-  .banner__search {
-    margin-top: 48px;
-
-    input {
-      background: #FFFFFF;
-      border-radius: 8px;
-      font-weight: 500;
-      font-size: 16px;
-      line-height: 130%;
-      padding: 16px;
-      letter-spacing: 0.02em;
-      color: #DDDDDD;
-      width: 327px;
-    }
-
-    button {
-      margin-left: 13px;
-      background: $blue;
-      border-radius: 8px;
-      font-weight: 500;
-      font-size: 18px;
-      line-height: 135%;
-      padding: 16px 48px;
-      border: none;
-      outline: none;
-      letter-spacing: 0.02em;
-      color: #FFFFFF;
-      transition: $hover__transition;
-
-      &:hover {
-        background: #063874
-      }
-    }
-  }
-}
-
-.animated {
-  width: 537px;
-  height: 145px;
-}
-
-.partners {
-  padding: 160px 0 110px;
-
-  h1 {
-    font-weight: 600;
-    font-size: 32px;
-    line-height: 130%;
-    letter-spacing: 0.02em;
-    color: #191F23;
-    max-width: 294px;
-  }
-
-  .partners__info {
-    max-width: 608px;
-
-    .partners__grid {
-      margin-top: 51px;
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      grid-row-gap: 55px;
-
-      img {
-        max-width: 130px;
-      }
-    }
-  }
-
-  p {
-    font-weight: 400;
-    font-size: 18px;
-    margin: 0;
-    line-height: 28px;
-    letter-spacing: -0.01em;
-    color: #232226;
-
-  }
-}
-
-.section2 {
-  z-index: 10;
-  margin-top: -167px;
-  position: relative;
-  background: #EAEFF9;
-  padding: 115px 0 120px;
-  border: 33px solid rgba(0, 72, 157, 0.02);
-  border-radius: 20px;
-
-  p {
-    max-width: 435px;
-    margin: 16px 0 32px;
-  }
-
-  .absolute__n {
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 100%;
-  }
-}
-
-.section5 {
-  padding: 60px 35px;
-
-  h1 {
-    font-weight: 600;
-    font-size: 32px;
-    line-height: 130%;
-    max-width: 571px;
-    letter-spacing: 0.02em;
-    color: #131313;
-
-    span {
-      color: #F6652F;
-    }
-  }
-
-  p {
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 140%;
-    color: #1D1D1D;
-  }
-
-  button {
-    width: max-content;
-  }
-}
-
-.section6 {
-  margin-top: 220px;
-  padding-bottom: 120px;
-
-  p {
-    text-align: center;
-    max-width: 399px;
-    margin-top: 24px;
-    margin-bottom: 40px;
-  }
-
-  h2 {
-    font-weight: 500;
-    font-size: 40px;
-    line-height: 110%;
-    text-align: center;
-    letter-spacing: 0.02em;
-    color: #131313;
-  }
-
-  button {
-    background: $orange;
-  }
-
-  .grid__item__title {
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 18px;
-    letter-spacing: 0.2px;
-    color: #131313;
-    margin: 16px 0;
-  }
-
-  .grid__item__content {
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 24px;
-    max-width: 336px;
-    letter-spacing: 0.2px;
-    color: #131313;
-
-  }
-}
-
-.section7 {
-  background: #D8E5DA;
-  position: relative;
-  padding-top: 110px;
-
-  .undefined__vector {
-    position: absolute;
-    bottom: 0;
-    z-index: 1;
-    height: 100%;
-    left: 0;
-  }
-  .limit__container{
-    z-index: 2;
-    position: relative;
-  }
-  p {
-    max-width: 426px;
-    margin: 16px 0 24px;
-  }
-
-  button {
-    background: #3D7C46;
-  }
-}
-
-.section10 {
-  padding: 126px 0 121px;
-  background: #E5ECF7;
-}
-
-.submit__app {
-  h1 {
-    margin-bottom: 32px;
-    font-weight: 500;
-    font-size: 40px;
-    line-height: 110%;
-    max-width: 400px;
-    letter-spacing: 0.02em;
-    color: #131313;
-  }
+.v-tabs-slider-wrapper {
+  width: 0 !important;
 }
 </style>
