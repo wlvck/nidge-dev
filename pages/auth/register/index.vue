@@ -90,6 +90,7 @@
 import Icon from '@/components/Icons/Icon'
 
 export default {
+  transition: 'fade',
   data: () => ({
     valid: false,
     password: '',

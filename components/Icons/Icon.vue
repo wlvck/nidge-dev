@@ -15,6 +15,8 @@ import TabArrow from "@/components/Icons/Index/TabArrow";
 import Google from "@/components/Icons/auth/Google";
 import Facebook from "@/components/Icons/auth/Facebook";
 import Apple from "@/components/Icons/auth/Apple";
+import Logout from "@/components/Icons/Index/Logout";
+import Bell from "@/components/Icons/Index/Bell";
 
 export default {
   name: "Icon",
@@ -34,7 +36,10 @@ export default {
     TabArrow,
     Google,
     Facebook,
-    Apple
+    Apple,
+    Logout,
+    Bell
+
   }
 }
 </script>

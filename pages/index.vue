@@ -8,7 +8,7 @@
           launches.</p>
         <div class="banner__search d-flex align-center">
           <input type="text" placeholder="Java developer">
-          <button>
+          <button @click.prevent="routerPush">
             Search
           </button>
         </div>
@@ -317,7 +317,7 @@
         <section class="submit__app d-flex align-center justify-space-between">
           <div>
             <h1>You don't know who to hire?</h1>
-            <button class="btn-primary">Submit your application</button>
+            <button class="btn-primary" @click.prevent="routerPush">Submit your application</button>
           </div>
           <div>
             <img src="@/static/app.png" alt="">
@@ -337,6 +337,11 @@ export default {
   components: {
     FeedbackSlider,
     Icon
+  },
+  methods: {
+    routerPush() {
+      this.$nuxt.$options.router.push('/search')
+    }
   }
 }
 </script>

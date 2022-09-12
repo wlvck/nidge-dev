@@ -20,16 +20,3 @@ export default {
   }
 }
 </script>
-<style lang="scss">
-@import "assets/variables";
-.nuxt--app {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-
-  .nuxt--main {
-    flex: 1 1 auto;
-    background: $background;
-  }
-}
-</style>

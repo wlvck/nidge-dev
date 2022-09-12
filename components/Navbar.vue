@@ -12,18 +12,30 @@
           <div class="nav-link">
             <nuxt-link to="/company">For developers</nuxt-link>
           </div>
-          <nuxt-link
-            to="/auth/login"
-            class="navbar__btn outlined"
-          >
-            Sign up
-          </nuxt-link>
-          <nuxt-link
-            to=""
-            class="navbar__btn notOutlined"
-          >
-            Hire developers
-          </nuxt-link>
+          <div v-show="!authorized">
+            <nuxt-link
+              to="/auth/login"
+              class="navbar__btn outlined"
+            >
+              Sign up
+            </nuxt-link>
+            <nuxt-link
+              to=""
+              class="navbar__btn notOutlined"
+            >
+              Hire developers
+            </nuxt-link>
+          </div>
+          <div class="d-flex align-center" v-if="authorized">
+            <icon icon-name="bell" class="mr-5"/>
+            <div class="d-flex align-center mr-10">
+              <img src="@/static/user4.png" alt="" class="rounded-circle mr-4" style="width: 40px;height: 40px;">
+              <span>Kanagat</span>
+            </div>
+            <nuxt-link to="/auth/login">
+              <icon icon-name="logout"></icon>
+            </nuxt-link>
+          </div>
         </div>
       </nav>
     </div>
@@ -31,8 +43,18 @@
 </template>
 
 <script>
+import Icon from "@/components/Icons/Icon";
+
 export default {
-  name: "Navbar"
+  name: "Navbar",
+  components: {
+    Icon
+  },
+  data() {
+    return {
+      authorized: false
+    }
+  }
 }
 </script>
 
