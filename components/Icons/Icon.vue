@@ -17,7 +17,7 @@ import Facebook from "@/components/Icons/auth/Facebook";
 import Apple from "@/components/Icons/auth/Apple";
 import Logout from "@/components/Icons/Index/Logout";
 import Bell from "@/components/Icons/Index/Bell";
-
+import EditButton from "@/components/Icons/account/EditButton";
 export default {
   name: "Icon",
   props: {
@@ -38,8 +38,8 @@ export default {
     Facebook,
     Apple,
     Logout,
-    Bell
-
+    Bell,
+    EditButton
   }
 }
 </script>

@@ -27,9 +27,11 @@
             </div>
           </div>
         </v-expansion-panel-content>
-        <button class="btn-primary btn-submit">
-          Submit application
-        </button>
+        <nuxt-link to="/auth/register/purpose/developer/account">
+          <button class="btn-primary btn-submit">
+            Submit application
+          </button>
+        </nuxt-link>
       </v-expansion-panel>
     </v-expansion-panels>
   </div>
@@ -42,7 +44,8 @@ export default {
     return {
       panel: [0],
     }
-  }
+  },
+  methods: {}
 }
 </script>
 

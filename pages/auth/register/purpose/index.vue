@@ -6,16 +6,7 @@
         ref="form"
         lazy-validation
       >
-        <nuxt-link to="/auth/register">
-          <div class="goToBack d-flex align-center">
-            <svg class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4 12L20 12" stroke="#333333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M9 17.5L4 12L9 6.5" stroke="#333333" stroke-width="1.5" stroke-linecap="round"
-                    stroke-linejoin="round"/>
-            </svg>
-            Back
-          </div>
-        </nuxt-link>
+        <GoBack url="/auth/register"/>
         <h2 class="form__title">For what purposes</h2>
         <div class="select__purpose mt-4 mb-7">
           <div class="d-flex align-center">
@@ -49,8 +40,12 @@
 </template>
 
 <script>
+import GoBack from "@/components/utils/GoBack";
 
 export default {
   data: () => ({}),
+  components: {
+    GoBack
+  }
 }
 </script>
