@@ -69,4 +69,114 @@
     margin-left: 24px;
     margin-top: -50px;
   }
+
+  .stack__container {
+    max-width: 800px;
+    width: 100%;
+  }
+
+  .stack {
+    position: relative;
+    margin-right: 12px;
+    margin-bottom: 13px;
+
+    input {
+      position: absolute;
+      opacity: 0;
+
+      &:checked ~ label {
+        background: #00489D;
+        color: white
+      }
+    }
+
+    label {
+      cursor: pointer;
+      width: max-content;
+      background: #E6EDF5;
+      transition: 0.2s;
+      border-radius: 50px;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 24px;
+      padding: 5px 16px;
+      color: #00489D;
+
+      svg {
+        margin-right: 8px;
+      }
+    }
+  }
+
+  .custom__radio__buttons {
+    margin-top: 24px;
+
+    h3 {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 14px;
+      margin-bottom: 12px;
+      color: #BDBDBD;
+    }
+
+    .position {
+      padding-right: 36px;
+
+      input {
+        opacity: 0;
+        position: absolute;
+
+        &:checked ~ label:before {
+          background: #00489D;
+        }
+      }
+
+      label {
+        position: relative;
+        padding-left: 25px;
+        cursor: pointer;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 100%;
+        color: #000000;
+
+        &:before {
+          content: '\2713';
+          color: white;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 15px;
+          left: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          transition: 0.3s;
+          position: absolute;
+          border: 1.5px solid #DBDAEA;
+          width: 16px;
+          height: 16px;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+
+  .add_experience {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .reverse__ {
+    .v-input--is-label-active {
+      flex-direction: row-reverse;
+      position: relative;
+      .v-input__prepend-outer{
+        position: absolute;
+        right: 0;
+        top: 40%;
+        transform: translateY(-50%);
+      }
+    }
+  }
 }

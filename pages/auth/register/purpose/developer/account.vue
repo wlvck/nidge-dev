@@ -155,6 +155,186 @@
           </v-container>
         </div>
       </v-row>
+      <v-row class="px-3 py-3">
+        <div class="light__card no-shadow border-radius-8 v-picker--full-width">
+          <v-container class="v__container">
+            <h2 class="form__title mb-5">Technology stack</h2>
+            <div class="d-flex flex-wrap stack__container">
+              <div class="stack" v-for="(item, index) in stack_list" :key="item">
+                <input type="checkbox" :id="index">
+                <label :for="index">{{ item }}</label>
+              </div>
+            </div>
+            <div class="stack">
+              <label class="d-flex align-center">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M2.66699 8H13.3337" stroke="#00489D" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round"/>
+                  <path d="M8 2.66602L8 13.3327" stroke="#00489D" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round"/>
+                </svg>
+                Add stack</label>
+            </div>
+            <div class="custom__radio__buttons">
+              <h3>Seniority</h3>
+              <div class="d-flex align-center">
+                <div class="position">
+                  <input type="radio" name="position" id="Senior">
+                  <label for="Senior">Senior</label>
+                </div>
+                <div class="position">
+                  <input type="radio" name="position" id="Middle">
+                  <label for="Middle">Middle</label>
+                </div>
+                <div class="position">
+                  <input type="radio" name="position" id="Junior">
+                  <label for="Junior">Junior</label>
+                </div>
+              </div>
+            </div>
+          </v-container>
+        </div>
+      </v-row>
+      <v-row class="px-3 py-3">
+        <div class="light__card no-shadow border-radius-8 v-picker--full-width">
+          <div class="v__container d-block v-picker--full-width">
+            <div class="form__title mb-5">
+              Work experience
+            </div>
+            <div class="additional__work__experience">
+              <v-row class="reverse__">
+                <v-col
+                  cols="12"
+                  md="4"
+                >
+                  <v-text-field
+                    v-model="project_name"
+                    label="Project name"
+                    required
+                  ></v-text-field>
+                </v-col>
+                <v-col
+                  cols="12"
+                  md="4"
+                >
+                  <v-text-field
+                    v-model="employment_type"
+                    label="Employment type"
+                    required
+                  ></v-text-field>
+                </v-col>
+                <v-col
+                  cols="12"
+                  md="4"
+                >
+                  <v-text-field
+                    v-model="company_name"
+                    label="Company name"
+                    required
+                  ></v-text-field>
+                </v-col>
+                <v-col
+                  cols="12"
+                  sm="6"
+                  md="4"
+                >
+                  <v-menu
+                    v-model="start_menu"
+                    :close-on-content-click="false"
+                    :nudge-right="40"
+                    transition="scale-transition"
+                    offset-y
+                    min-width="auto"
+                  >
+                    <template v-slot:activator="{ on, attrs }">
+                      <v-text-field
+                        v-model="start_date"
+                        label="Start date"
+                        prepend-icon="mdi-calendar"
+                        readonly
+                        v-bind="attrs"
+                        v-on="on"
+                      ></v-text-field>
+                    </template>
+                    <v-date-picker
+                      v-model="start_date"
+                      @input="start_menu = false"
+                    ></v-date-picker>
+                  </v-menu>
+                </v-col>
+                <v-col
+                  cols="12"
+                  sm="6"
+                  md="4"
+                >
+                  <v-menu
+                    v-model="end_menu"
+                    :close-on-content-click="false"
+                    :nudge-right="40"
+                    transition="scale-transition"
+                    offset-y
+                    min-width="auto"
+                  >
+                    <template v-slot:activator="{ on, attrs }">
+                      <v-text-field
+                        v-model="end_date"
+                        label="End date"
+                        prepend-icon="mdi-calendar"
+                        readonly
+                        v-bind="attrs"
+                        v-on="on"
+                      ></v-text-field>
+                    </template>
+                    <v-date-picker
+                      v-model="end_date"
+                      @input="end_menu = false"
+                    ></v-date-picker>
+                  </v-menu>
+                </v-col>
+              </v-row>
+              <v-row>
+                <v-col
+                  cols="12"
+                  md="12"
+                >
+                  <v-text-field
+                    v-model="description"
+                    label="Description"
+                    required
+                  ></v-text-field>
+                </v-col>
+              </v-row>
+              <div class="form__title mt-3 mb-4">
+                Used technology stack
+              </div>
+              <div class="d-flex flex-wrap stack__container">
+                <div class="stack" v-for="(item, index) in stack_list.slice(0, 5)" :key="item">
+                  <input type="checkbox" :id="index">
+                  <label :for="index">{{ item }}</label>
+                </div>
+                <div class="stack">
+                  <label>Add stack</label>
+                </div>
+              </div>
+            </div>
+            <button type="button" class="add_experience mt-9 d-flex align-center">
+              <svg width="24" height="24" class="mr-3" viewBox="0 0 24 24" fill="none"
+                   xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 12H20" stroke="#00489D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 4L12 20" stroke="#00489D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Add position
+            </button>
+          </div>
+        </div>
+      </v-row>
+      <v-row class="px-3 py-3">
+        <div class="light__card no-shadow border-radius-8 v-picker--full-width">
+          <v-container class="v__container">
+            <button class="btn-primary py-2 px-8" type="submit">Register</button>
+          </v-container>
+        </div>
+      </v-row>
     </v-form>
   </div>
 </template>
@@ -184,10 +364,19 @@ export default {
   },
   data() {
     return {
+      start_date: (new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000)).toISOString().substr(0, 10),
+      end_date: (new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000)).toISOString().substr(0, 10),
+      start_menu: false,
+      end_menu: false,
       valid: false,
+      row: null,
       firstname: '',
       lastname: '',
+      description: '',
       phone: '',
+      company_name: '',
+      project_name: '',
+      employment_type: '',
       about: '',
       link: '',
       time: '',
@@ -219,14 +408,48 @@ export default {
         'timeZone 3',
         'timeZone 4',
       ],
+      stack_list: [
+        'Python',
+        'Php',
+        'Nuxt',
+        'Java',
+        'Ruby',
+        'Javascript',
+        'Css',
+        'Html',
+        'C++',
+        'C#',
+        'Vue',
+        'Angular',
+        'React',
+        'Django',
+        'Laravel',
+        'Docker'
+      ]
     }
   },
   computed: {
-    countryError() {
-      const errors = []
-      if (!this.$v.select.$dirty) return errors
-      !this.$v.select.required && errors.push('Item is required')
-      return errors
+    computedDateFormatted() {
+      return this.formatDate(this.date)
+    },
+  },
+  methods: {
+    formatDate(date) {
+      if (!date) return null
+
+      const [year, month, day] = date.split('-')
+      return `${month}/${day}/${year}`
+    },
+    parseDate(date) {
+      if (!date) return null
+
+      const [month, day, year] = date.split('/')
+      return `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`
+    },
+  },
+  watch: {
+    date(val) {
+      this.dateFormatted = this.formatDate(this.date)
     },
   },
 }
