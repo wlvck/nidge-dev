@@ -28,7 +28,7 @@
           </div>
         </v-expansion-panel-content>
         <nuxt-link to="/auth/register/purpose/developer/account">
-          <button class="btn-primary btn-submit">
+          <button class="btn-primary btn-submit" @click="redirect">
             Submit application
           </button>
         </nuxt-link>
@@ -45,7 +45,13 @@ export default {
       panel: [0],
     }
   },
-  methods: {}
+  methods: {
+    redirect(){
+      this.$nuxt.$options.router.push({
+        name: 'auth-register-purpose-developer-account'
+      })
+    }
+  }
 }
 </script>
 

@@ -116,7 +116,9 @@ export default {
   },
   methods: {
     validate() {
-      this.$refs.form.validate()
+      if (this.$refs.form.validate()) {
+        this.$nuxt.$router.push('/auth/register/purpose')
+      }
     },
   },
 }

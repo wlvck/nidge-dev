@@ -289,8 +289,18 @@
       </div>
     </div>
     <div class="section8">
-      <FeedbackSlider>
-      </FeedbackSlider>
+      <div class="limit__container mx-auto d-flex align-center justify-space-between slider mt-10 pt-10">
+        <h1>Hear form our clients</h1>
+        <div class="d-flex">
+          <div @click="showPrev">
+            <icon class="arrow left" icon-name="left-arrow"></icon>
+          </div>
+          <div @click="showNext">
+            <icon class="arrow" icon-name="right-arrow"></icon>
+          </div>
+        </div>
+      </div>
+      <FeedbackSlider ref="carousel"  :title="'Hear from our clients  '"/>
     </div>
     <div class="section9">
       <div class="limit__container mx-auto">
@@ -341,7 +351,14 @@ export default {
   methods: {
     routerPush() {
       this.$nuxt.$options.router.push('/search')
-    }
+    },
+    showPrev() {
+      this.$refs.carousel.$children[0].prev()
+    },
+    showNext() {
+      this.$refs.carousel.$children[0].next()
+    },
+
   }
 }
 </script>

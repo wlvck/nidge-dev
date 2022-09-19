@@ -283,4 +283,126 @@
     margin-right: 12px;
     margin-bottom: 12px;
   }
+
+  .experience__list {
+    margin-top: 24px;
+    list-style-type: none;
+    padding: 0;
+
+    .experience__item {
+      padding: 0 0 0 56px;
+      position: relative;
+      margin-top: 16px;
+
+      .item__timeLine {
+        left: 0;
+        top: 0;
+        height: 100%;
+        //border: 1px solid red;
+        position: absolute;
+
+        .doted__line {
+          position: absolute;
+          height: 100%;
+          width: 1px;
+          top: 25px;
+          left: 50%;
+          transform: translateX(-50%);
+          z-index: 1;
+          border-left: 1px dashed #D9D9D9;
+        }
+
+        .timeLineParent {
+          position: relative;
+          z-index: 2;
+          width: 40px;
+          height: 40px;
+          background: #E6EDF5;
+          border-radius: 100%;
+
+          .timeLineChild {
+            background: #00489D;
+            width: 12px;
+            height: 12px;
+            border-radius: 100%;
+          }
+        }
+      }
+
+      &:first-child {
+        margin-top: 0;
+      }
+
+      &:last-child {
+        .item__content {
+          border-bottom: none;
+        }
+
+        .doted__line {
+          display: none;
+        }
+      }
+
+      .item__content {
+        max-width: 532px;
+        width: 100%;
+        border-bottom: 1px solid #F4F4F4;
+        padding-bottom: 24px;
+
+        .content__title {
+          font-weight: 500;
+          margin-bottom: 18px;
+          font-size: 16px;
+          line-height: 130%;
+          letter-spacing: 0.02em;
+          color: #000000;
+        }
+
+        .detailed__info {
+          display: flex;
+          align-items: center;
+          margin-top: 20px;
+          margin-bottom: 30px;
+          justify-content: space-between;
+
+          .time {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 140%;
+            letter-spacing: 0.02em;
+            color: #131313;
+          }
+
+          .position, .comp_name {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 140%;
+            color: #465472;
+            letter-spacing: 0.02em;
+          }
+        }
+
+        .description {
+          font-weight: 400;
+          font-size: 14px;
+          margin-bottom: 16px;
+          letter-spacing: 0.02em;
+          color: #465472;
+        }
+
+        .stack {
+          display: inline-block;
+          font-weight: 400;
+          font-size: 14px;
+          background: #E6EDF5;
+          padding: 3px 16px;
+          margin-right: 12px;
+          border: 1px solid #00489D;
+          border-radius: 50px;
+          line-height: 24px;
+          color: #00489D;
+        }
+      }
+    }
+  }
 }

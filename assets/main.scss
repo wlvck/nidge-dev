@@ -93,6 +93,11 @@ input[type=number] {
   text-align: center;
   letter-spacing: 0.02em;
   color: #FFFFFF;
+
+  &:disabled {
+    background: #7E7E7E;
+    color: #ffffff;
+  }
 }
 
 .section6__grid {

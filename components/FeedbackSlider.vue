@@ -1,17 +1,6 @@
 <template>
-  <div class="product-slider">
-    <div class="limit__container mx-auto d-flex align-center justify-space-between slider">
-      <h1>Hear from our clients</h1>
-      <div class="d-flex">
-        <div @click="showPrev">
-          <icon class="arrow left" icon-name="left-arrow"></icon>
-        </div>
-        <div @click="showNext">
-          <icon class="arrow" icon-name="right-arrow"></icon>
-        </div>
-      </div>
-    </div>
-    <VueSlickCarousel ref="carousel" :arrows="false" v-bind="settings">
+  <div class="product-slider mt-8">
+    <VueSlickCarousel :arrows="false" v-bind="settings">
       <div class="card" v-for="(card, index) in 20" :key="index">
         <img src="@/static/slider-user.png" alt="">
         <h2>Amber Larson {{ index }}</h2>
@@ -76,22 +65,9 @@ export default {
       }
     }
   },
-  methods: {
-    showPrev() {
-      this.$refs.carousel.prev()
-      console.log(this.$refs.carousel)
-    },
-    showNext() {
-      this.$refs.carousel.next()
-    },
-  }
 }
 </script>
 <style lang="scss">
-.product-slider {
-  padding-top: 80px;
-}
-
 .card {
   background: #FFFFFF;
   border-radius: 8px;

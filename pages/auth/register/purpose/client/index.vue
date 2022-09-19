@@ -60,7 +60,7 @@
             </div>
           </div>
         </v-expansion-panel-content>
-        <button class="btn-primary btn-submit">
+        <button class="btn-primary btn-submit" type="button" @click.prevent="redirect">
           Submit application
         </button>
       </v-expansion-panel>
@@ -74,6 +74,13 @@ export default {
   data() {
     return {
       panel: [0],
+    }
+  },
+  methods: {
+    redirect() {
+      this.$nuxt.$options.router.push({
+        name: 'auth-register-purpose-client-enrolling-form'
+      })
     }
   }
 }
