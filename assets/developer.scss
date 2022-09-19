@@ -171,7 +171,8 @@
     .v-input--is-label-active {
       flex-direction: row-reverse;
       position: relative;
-      .v-input__prepend-outer{
+
+      .v-input__prepend-outer {
         position: absolute;
         right: 0;
         top: 40%;
@@ -179,4 +180,47 @@
       }
     }
   }
+
+  .new__position {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 135%;
+    letter-spacing: 0.02em;
+    color: #131313;
+  }
+
+  .delete__position {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    svg {
+      margin-right: 8px;
+    }
+
+    span {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 135%;
+      text-align: center;
+      letter-spacing: 0.02em;
+      color: #FF3333;
+    }
+  }
+
+  .save {
+    margin-top: 20px;
+    background: #F2F4F7;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 135%;
+    color: #00489D;
+    text-align: center;
+    letter-spacing: 0.02em;
+  }
+}
+
+.dev__link {
+  text-decoration: none;
 }
