@@ -1,6 +1,6 @@
 <template>
-  <div class="custom__input">
-    <input type="text" :placeholder="placeholder">
+  <div>
+    <v-text-field :label="placeholder"></v-text-field>
   </div>
 </template>
 
@@ -12,7 +12,3 @@ export default {
   name: "Input"
 }
 </script>
-
-<style scoped>
-
-</style>

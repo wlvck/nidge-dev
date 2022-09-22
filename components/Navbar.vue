@@ -57,8 +57,6 @@ export default {
   },
   mounted() {
     this.authorized = !!localStorage.getItem('user')
-    console.log('mounted in navbar')
-
   }
 }
 </script>

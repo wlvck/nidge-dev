@@ -70,44 +70,6 @@
     margin-top: -50px;
   }
 
-  .stack__container {
-    max-width: 800px;
-    width: 100%;
-  }
-
-  .stack {
-    position: relative;
-    margin-right: 12px;
-    margin-bottom: 13px;
-
-    input {
-      position: absolute;
-      opacity: 0;
-
-      &:checked ~ label {
-        background: #00489D;
-        color: white
-      }
-    }
-
-    label {
-      cursor: pointer;
-      width: max-content;
-      background: #E6EDF5;
-      transition: 0.2s;
-      border-radius: 50px;
-      font-weight: 400;
-      font-size: 14px;
-      line-height: 24px;
-      padding: 5px 16px;
-      color: #00489D;
-
-      svg {
-        margin-right: 8px;
-      }
-    }
-  }
-
   .custom__radio__buttons {
     margin-top: 24px;
 
@@ -403,6 +365,43 @@
           color: #00489D;
         }
       }
+    }
+  }
+}
+.stack__container {
+  max-width: 800px;
+  width: 100%;
+}
+
+.stack {
+  position: relative;
+  margin-right: 12px;
+  margin-bottom: 13px;
+
+  input {
+    position: absolute;
+    opacity: 0;
+
+    &:checked ~ label {
+      background: #00489D;
+      color: white
+    }
+  }
+
+  label {
+    cursor: pointer;
+    width: max-content;
+    background: #E6EDF5;
+    transition: 0.2s;
+    border-radius: 50px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    padding: 5px 16px;
+    color: #00489D;
+
+    svg {
+      margin-right: 8px;
     }
   }
 }

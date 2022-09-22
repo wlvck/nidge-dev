@@ -1,10 +1,12 @@
 <template>
-
+<div>
+  Checkbox
+</div>
 </template>
 
 <script>
 export default {
-  name: "RadioButton"
+  name: "Checkbox"
 }
 </script>
 
