@@ -5,14 +5,43 @@
 </template>
 
 <script>
+import {mapMutations} from 'vuex'
+
 export default {
   props: [
-    'placeholder'
+    'placeholder',
+    'options',
+    'question'
   ],
   name: "Input",
   data() {
     return {
       input__answer: ''
+    }
+  },
+  mounted() {
+    const id = this.question.id
+    const quiz__answers = this.$store.state.quiz__answers
+    quiz__answers.forEach((answer) => {
+      if (answer.id === id) {
+        this.input__answer = answer.input__answer
+      }
+    })
+  },
+  methods: {
+    ...mapMutations(['addAnswer'])
+  },
+  watch: {
+    input__answer: {
+      immediate: true,
+      handler(newValue) {
+        this.addAnswer({
+          id: this.question.id,
+          question: this.question.question,
+          answer: '',
+          inputAnswer: newValue
+        })
+      }
     }
   }
 }

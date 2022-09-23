@@ -1,16 +1,23 @@
+import quiz from "@/pages/auth/register/purpose/client/quiz";
+import answer from "@/components/utils/Quiz/Answer";
+
 export const state = () => ({
-  quiz__answer: []
+  quiz__answers: []
 })
 
 
 export const mutations = {
-  addAnswer(state, quiz) {
-    console.log(quiz)
-    state.quiz__answer.push({
-      question: quiz.question,
-      answer: quiz.answer
-    })
-  }
+  addAnswer(state, quiz__answer) {
+    const index = state.quiz__answers.findIndex(answer => answer.id === quiz__answer.id);
+    if (index !== -1) {
+      state.quiz__answers[index].answer = quiz__answer.answer
+      state.quiz__answers[index].inputAnswer = quiz__answer.inputAnswer
+      state.quiz__answers[index].stack__answer = quiz__answer.stack__answer
+      state.quiz__answers[index].checkbox__answer = quiz__answer.checkbox__answer
+    } else {
+      state.quiz__answers.push(quiz__answer)
+    }
+  },
 }
 
 export const actions = {}

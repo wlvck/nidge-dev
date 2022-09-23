@@ -79,7 +79,7 @@ export default {
   methods: {
     redirect() {
       this.$nuxt.$options.router.push({
-        name: 'auth-register-purpose-client-enrolling-form'
+        name: 'auth-register-purpose-client-quiz'
       })
     }
   }

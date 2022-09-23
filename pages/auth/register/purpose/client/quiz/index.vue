@@ -13,6 +13,7 @@
             <div>
               <Answer
                 :options="currentAnswers.answers"
+                :question="currentQuestion"
                 :types="currentAnswers.type"/>
             </div>
           </div>
@@ -46,7 +47,7 @@
             <div v-for="(question, index) in questions" :key="question.id" class="question__parent">
               <div class="question list-complete-item">
                 <div class="question__option">
-                  <div class="question__num active">
+                  <div :class="current__question === question.id ? 'question__num active' : 'question__num'">
                     {{ question.number }}
                   </div>
                 </div>
@@ -93,7 +94,6 @@ export default {
           answers: {
             type: [
               'Radio',
-              'Input'
             ],
             options: [
               'New idea or project',
@@ -161,23 +161,24 @@ export default {
         },
       ],
       spliced__questions: [],
+      current__question: '',
     }
   },
   mounted() {
-    this.current__question = this.questions[0].question
+    this.current__question = this.questions[0].id
   },
   methods: {
     goForward: function () {
       if (this.questions.length > 1) {
         this.spliced__questions.push(this.questions[0])
         this.questions.splice(0, 1)
+        this.current__question = this.questions[0].id
       } else {
         this.$nuxt.$options.router.push('/auth/register/purpose/client')
       }
     },
     goBack() {
       if (this.spliced__questions.length > 0) {
-        console.log(this.spliced__questions[this.spliced__questions.length - 1].id)
         const last_item = this.spliced__questions[this.spliced__questions.length - 1]
         this.questions.unshift(last_item)
         this.spliced__questions.pop()

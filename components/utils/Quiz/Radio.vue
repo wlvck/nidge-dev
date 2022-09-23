@@ -1,19 +1,48 @@
 <template>
   <div>
-    <div class="custom__radio mb-6" v-for="option in options" :key="option">
-      <input v-model="radio__answer" :value="option" type="radio" :id="option">
+    <div class="custom__radio mb-6" v-for="(option) in options" :key="option">
+      <input v-model="form.radio__answer[question.id]" :value="option" type="radio" :id="option">
       <label :for="option">{{ option }}</label>
     </div>
   </div>
 </template>
 
 <script>
+import {mapMutations} from "vuex";
+
 export default {
   name: "Radio",
-  props: ['options'],
+  props: ['options', 'question'],
   data() {
     return {
-      radio__answer: ''
+      form: {
+        radio__answer: []
+      }
+    }
+  },
+  mounted() {
+    const id = this.question.id
+    const quiz__answers = this.$store.state.quiz__answers
+    quiz__answers.forEach((answer) => {
+      if (answer.id === id) {
+        this.radio__answer = answer.radio__answer
+      }
+    })
+  },
+  methods: {
+    ...mapMutations(['addAnswer'])
+  },
+  watch: {
+    form: {
+      deep: true,
+      handler(newValue) {
+        this.addAnswer({
+          id: this.question.id,
+          question: this.question.question,
+          answer: newValue.radio__answer[this.question.id],
+          inputAnswer: ''
+        })
+      }
     }
   }
 }

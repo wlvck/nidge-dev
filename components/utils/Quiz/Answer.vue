@@ -5,6 +5,7 @@
         :class="types.length > 1 ? 'multiple__component' : ''"
         :is="type"
         :options="options"
+        :question="question"
         :placeholder="'Number'"/>
     </keep-alive>
   </div>
@@ -18,7 +19,7 @@ import Stack from "@/components/utils/Quiz/Stack";
 
 export default {
   name: "Answer",
-  props: ['types', 'options'],
+  props: ['types', 'options', 'question'],
   components: {
     Input,
     Checkbox,

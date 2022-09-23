@@ -8,14 +8,44 @@
 </template>
 
 <script>
+import {mapMutations} from "vuex";
+
 export default {
   name: "Checkbox",
   props: [
-    'options'
+    'options',
+    'question'
   ],
   data() {
     return {
       checkbox__answer: []
+    }
+  },
+  mounted(){
+    const id = this.question.id
+    const quiz__answers = this.$store.state.quiz__answers
+    quiz__answers.forEach((answer) => {
+      if (answer.id === id) {
+        this.checkbox__answer = answer.checkbox__answer
+      }
+    })
+  },
+  methods: {
+    ...mapMutations(['addAnswer'])
+  },
+  watch: {
+    checkbox__answer: {
+      immediate: true,
+      handler(newValue) {
+        this.addAnswer({
+          id: this.question.id,
+          question: this.question.question,
+          answer: '',
+          inputAnswer: '',
+          stack__answer: '',
+          checkbox__answer: newValue
+        })
+      }
     }
   }
 }
