@@ -4,6 +4,7 @@
       <v-form
         class="auth__form"
         ref="form"
+        @submit.prevent="register"
         v-model="valid"
         lazy-validation
       >
@@ -88,7 +89,7 @@
 
 <script>
 import Icon from '@/components/Icons/Icon'
-
+import axios from 'axios'
 export default {
   transition: 'fade',
   data: () => ({
@@ -115,6 +116,10 @@ export default {
     Icon
   },
   methods: {
+    register(){
+      this.validate()
+      axios.post('http://127.0.0.1:8000/api/auth/register')
+    },
     validate() {
       if (this.$refs.form.validate()) {
         this.$nuxt.$router.push('/auth/register/purpose')

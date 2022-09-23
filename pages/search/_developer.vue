@@ -12,7 +12,7 @@
                        src="https://img.freepik.com/premium-photo/profile-handsome-guy-building-book-shelf-handmade-design-wooden-industry-measuring-length-woodwork-workshop-indoors_274222-19506.jpg?w=2000"
                        alt="">
                   <div>
-                    <div class="dev__name">Amber Larson</div>
+                    <div class="dev__name">{{ this.$route.params.developer }}</div>
                     <div class="dev__experience">3 months</div>
                   </div>
                 </div>
@@ -79,7 +79,7 @@
             <v-container class="v__container">
               <h2 class="form__title mb-5">Work experience</h2>
               <ul class="experience__list">
-                <li class="experience__item"  v-for="item in 4" :key="item">
+                <li class="experience__item" v-for="item in 4" :key="item">
                   <div class="item__timeLine">
                     <div class="d-flex align-center justify-center timeLineParent">
                       <div class="timeLineChild"></div>
@@ -92,7 +92,8 @@
                     </div>
                     <div class="d-flex detailed__info">
                       <div class="time d-flex align-center">
-                        <svg class="mr-3" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg class="mr-3" width="18" height="18" viewBox="0 0 18 18" fill="none"
+                             xmlns="http://www.w3.org/2000/svg">
                           <path
                             d="M17 7.4H1M12.5556 1V4.2M5.44444 1V4.2M5.26667 17H12.7333C14.2268 17 14.9735 17 15.544 16.7384C16.0457 16.5083 16.4537 16.1412 16.7094 15.6896C17 15.1762 17 14.5041 17 13.16V6.44C17 5.09587 17 4.42381 16.7094 3.91042C16.4537 3.45883 16.0457 3.09168 15.544 2.86158C14.9735 2.6 14.2268 2.6 12.7333 2.6H5.26667C3.77319 2.6 3.02646 2.6 2.45603 2.86158C1.95426 3.09168 1.54631 3.45883 1.29065 3.91042C1 4.42381 1 5.09587 1 6.44V13.16C1 14.5041 1 15.1762 1.29065 15.6896C1.54631 16.1412 1.95426 16.5083 2.45603 16.7384C3.02646 17 3.77319 17 5.26667 17Z"
                             stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -110,7 +111,7 @@
                       Mобильное приложение для продажи машин на запчасти, задачи: разработка приложения в одиночку и
                       потом в команде, сейчас в релизе
                     </div>
-                    <div >
+                    <div>
                       <div class="stack">
                         Java
                       </div>
@@ -159,6 +160,9 @@ export default {
   },
   data() {
     return {}
+  },
+  mounted(){
+    console.log('mounted')
   },
   computed: {},
   methods: {

@@ -182,6 +182,7 @@ export default {
         const last_item = this.spliced__questions[this.spliced__questions.length - 1]
         this.questions.unshift(last_item)
         this.spliced__questions.pop()
+        this.current__question = this.questions[0].id
       }
     }
   },

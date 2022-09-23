@@ -7,7 +7,7 @@
         <p>We connect you with developers experienced in mobile apps, web apps, UI/UX design, and digital project
           launches.</p>
         <div class="banner__search d-flex align-center">
-          <input type="text" placeholder="Java developer">
+          <input type="text" v-model="query" placeholder="Java developer">
           <button @click.prevent="routerPush">
             Search
           </button>
@@ -300,7 +300,7 @@
           </div>
         </div>
       </div>
-      <FeedbackSlider ref="carousel"  :title="'Hear from our clients  '"/>
+      <FeedbackSlider ref="carousel" :title="'Hear from our clients  '"/>
     </div>
     <div class="section9">
       <div class="limit__container mx-auto">
@@ -348,9 +348,19 @@ export default {
     FeedbackSlider,
     Icon
   },
+  data() {
+    return {
+      query: ''
+    }
+  },
   methods: {
     routerPush() {
-      this.$nuxt.$options.router.push('/search')
+      this.$nuxt.$options.router.push({
+        name: 'search',
+        params: {
+          query: this.query
+        }
+      })
     },
     showPrev() {
       this.$refs.carousel.$children[0].prev()

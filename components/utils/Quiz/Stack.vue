@@ -35,7 +35,7 @@ export default {
   },
   watch: {
     stack__answer: {
-      immediate: true,
+      // immediate: true,
       handler(newValue) {
         this.addAnswer({
           id: this.question.id,
