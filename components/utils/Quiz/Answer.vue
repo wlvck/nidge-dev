@@ -1,7 +1,11 @@
 <template>
   <div>
-    <keep-alive>
-      <component :is="type" :option="option" :placeholder="'Number'"></component>
+    <keep-alive v-for="type in types" :key="type">
+      <component
+        :class="types.length > 1 ? 'multiple__component' : ''"
+        :is="type"
+        :options="options"
+        :placeholder="'Number'"/>
     </keep-alive>
   </div>
 </template>
@@ -14,7 +18,7 @@ import Stack from "@/components/utils/Quiz/Stack";
 
 export default {
   name: "Answer",
-  props: ['type', 'option'],
+  props: ['types', 'options'],
   components: {
     Input,
     Checkbox,
@@ -27,6 +31,8 @@ export default {
 }
 </script>
 
-<style scoped>
-
+<style lang="scss">
+.multiple__component{
+  margin-bottom: 36px;
+}
 </style>

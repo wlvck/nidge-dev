@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-text-field :label="placeholder"></v-text-field>
+    <v-text-field v-model="input__answer" :label="placeholder"></v-text-field>
   </div>
 </template>
 
@@ -9,6 +9,11 @@ export default {
   props: [
     'placeholder'
   ],
-  name: "Input"
+  name: "Input",
+  data() {
+    return {
+      input__answer: ''
+    }
+  }
 }
 </script>

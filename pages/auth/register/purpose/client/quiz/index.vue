@@ -10,15 +10,10 @@
             {{ currentQuestion.question }}
           </div>
           <div class="box__main pt-6">
-            <div v-if="currentAnswers.answers.length === 0">
-              <Answer :type="currentAnswers.type[0]"/>
-            </div>
-            <div v-else
-                 v-for="(option, index) in currentAnswers.answers"
-                 :key="option">
+            <div>
               <Answer
-                :option="[index, option]"
-                :type="currentAnswers.type[0]"/>
+                :options="currentAnswers.answers"
+                :types="currentAnswers.type"/>
             </div>
           </div>
           <div class="box__footer d-flex align-center justify-space-between">
@@ -39,6 +34,7 @@
           </div>
         </div>
         <div class="scrollable__questions">
+          <div class="blue__block"></div>
           <transition-group name="list-complete" class="questions">
             <div v-for="question in questions" :key="question.question" class="question__parent">
               <div class="question list-complete-item">
@@ -107,7 +103,6 @@ export default {
           answers: {
             type: [
               'Radio',
-              'Input'
             ],
             options: [
               'Less than 1 week',
@@ -127,7 +122,7 @@ export default {
               'Stack'
             ],
             options: [
-              'Python', 'Javascript', 'Kotlin', 'Django', 'C++', 'C#',
+              'Python', 'Javascript', 'Kotlin', 'C++', 'C#',
               'Java', 'Flutter', 'Php', 'Django', 'Laravel', 'Vue', 'React'
             ]
           }
@@ -135,12 +130,28 @@ export default {
         {
           id: 5,
           number: '05',
-          question: 'When do you need the developer to start?'
+          question: 'When do you need the developer to start?',
+          answers: {
+            type: [
+              'Radio'
+            ],
+            options: [
+              'Immediately', 'In 3 to 4 days', 'In 1 to 2 weeks', 'More than 2 weeks from now'
+            ]
+          }
         },
         {
           id: 6,
           number: '06',
-          question: 'What is your budget per role?'
+          question: 'What is your budget per role?',
+          answers: {
+            type: [
+              'Checkbox'
+            ],
+            options: [
+              '< 20$ / h', '< 50$ / h', '< 100$ / h', '< 200$ / h'
+            ]
+          }
         },
       ],
     }

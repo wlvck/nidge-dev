@@ -138,9 +138,19 @@
 
 .scrollable__questions {
   max-width: 455px;
+  position: relative;
   height: 460px;
   overflow: hidden;
   width: 100%;
+
+  .blue__block {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    z-index: 15;
+    height: 25px;
+    background: linear-gradient(180deg, rgba(242, 244, 247, 0) 0%, #F2F4F7 24.58%);
+  }
 
   .question {
     display: flex;

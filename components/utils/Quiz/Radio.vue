@@ -1,14 +1,21 @@
 <template>
-  <div class="custom__radio mb-6">
-    <input name="radio" :value="option[1]" type="radio" :id="'radio' + option[0]">
-    <label :for="'radio' + option[0]">{{ option[1] }}</label>
+  <div>
+    <div class="custom__radio mb-6" v-for="option in options" :key="option">
+      <input v-model="radio__answer" :value="option" type="radio" :id="option">
+      <label :for="option">{{ option }}</label>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
   name: "Radio",
-  props: ['option']
+  props: ['options'],
+  data() {
+    return {
+      radio__answer: ''
+    }
+  }
 }
 </script>
 
