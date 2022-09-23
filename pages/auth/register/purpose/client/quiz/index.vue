@@ -17,7 +17,10 @@
             </div>
           </div>
           <div class="box__footer d-flex align-center justify-space-between">
-            <button class="back d-flex align-center">
+            <button
+              v-if="this.spliced__questions.length"
+              @click.prevent="goBack"
+              class="back d-flex align-center">
               <svg class="mr-2" width="24" height="24" viewBox="0 0 24 24" fill="none"
                    xmlns="http://www.w3.org/2000/svg">
                 <path d="M15 18L9 12L15 6" stroke="#00489D" stroke-width="1.5" stroke-linecap="round"
@@ -25,24 +28,27 @@
               </svg>
               Back
             </button>
+            <div v-if="!this.spliced__questions.length"></div>
             <div class="optional">
               <button class="skip">
                 Skip
               </button>
-              <button @click="goForward" class="next">Next</button>
+              <button @click="goForward" class="next">
+                <span v-if="questions.length > 1">Next</span>
+                <span v-else>Send</span>
+              </button>
             </div>
           </div>
         </div>
         <div class="scrollable__questions">
           <div class="blue__block"></div>
-          <transition-group name="list-complete" class="questions">
-            <div v-for="question in questions" :key="question.question" class="question__parent">
+          <transition-group name="list" class="questions">
+            <div v-for="(question, index) in questions" :key="question.id" class="question__parent">
               <div class="question list-complete-item">
                 <div class="question__option">
                   <div class="question__num active">
                     {{ question.number }}
                   </div>
-                  <div class="doted__line"></div>
                 </div>
                 <div class="question__title">
                   {{ question.question }}
@@ -154,6 +160,7 @@ export default {
           }
         },
       ],
+      spliced__questions: [],
     }
   },
   mounted() {
@@ -161,8 +168,21 @@ export default {
   },
   methods: {
     goForward: function () {
-      this.questions.splice(0, 1)
+      if (this.questions.length > 1) {
+        this.spliced__questions.push(this.questions[0])
+        this.questions.splice(0, 1)
+      } else {
+        this.$nuxt.$options.router.push('/auth/register/purpose/client')
+      }
     },
+    goBack() {
+      if (this.spliced__questions.length > 0) {
+        console.log(this.spliced__questions[this.spliced__questions.length - 1].id)
+        const last_item = this.spliced__questions[this.spliced__questions.length - 1]
+        this.questions.unshift(last_item)
+        this.spliced__questions.pop()
+      }
+    }
   },
   computed: {
     currentQuestion() {
@@ -191,16 +211,20 @@ export default {
   height: 100%;
 }
 
-.list-complete-enter, .list-complete-leave-to {
+.list-leave-active {
   opacity: 0;
   transform: translateY(-10px);
   transition: all 1s;
 }
 
-.list-complete-leave-active {
-  //position: absolute;
-  transition: all 1s;
+.list-leave-active {
   animation: removeHeight 1s;
+  transition: 1s;
+}
+
+.list-enter-active {
+  animation: addHeight 2s;
+  transition: 2s;
 }
 
 @keyframes removeHeight {
@@ -209,6 +233,17 @@ export default {
   }
   100% {
     height: 0;
+  }
+}
+
+@keyframes addHeight {
+  0% {
+    height: 0;
+    opacity: 0;
+  }
+  100% {
+    height: 100%;
+    opacity: 1;
   }
 }
 </style>

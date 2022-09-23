@@ -136,6 +136,12 @@
   }
 }
 
+.question__parent {
+  position: relative;
+  z-index: 10;
+
+}
+
 .scrollable__questions {
   max-width: 455px;
   position: relative;
@@ -156,10 +162,13 @@
     display: flex;
     align-items: center;
     list-style-type: none;
+    z-index: 10;
     position: relative;
 
     .question__option {
+      position: relative;
       margin-right: 24px;
+      z-index: 10;
 
       .question__num {
         position: relative;
