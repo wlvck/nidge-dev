@@ -31,10 +31,7 @@
             </button>
             <div v-if="!this.spliced__questions.length"></div>
             <div class="optional">
-              <button class="skip">
-                Skip
-              </button>
-              <button @click="goForward" class="next">
+              <button @click="goForward" class="next" :disabled="nextQuestion">
                 <span v-if="questions.length > 1">Next</span>
                 <span v-else>Send</span>
               </button>
@@ -75,6 +72,7 @@ export default {
   },
   data() {
     return {
+      nextQuestion: true,
       questions: [
         {
           id: 1,
@@ -176,6 +174,7 @@ export default {
       } else {
         this.$nuxt.$options.router.push('/auth/register/purpose/client')
       }
+      this.nextQuestion = true
     },
     goBack() {
       if (this.spliced__questions.length > 0) {
@@ -198,6 +197,17 @@ export default {
         answers: this.currentQuestion.answers.options
       }
     }
+  },
+  watch: {
+    '$store.state.quiz__answers': {
+      handler(newValue) {
+        let quiz = this.$store.state.quiz__answers
+        if (quiz.length > 1 && quiz[quiz.length - 1].id === this.currentQuestion.id || quiz.length && quiz[0].id === this.currentQuestion.id) {
+          this.nextQuestion = false
+        }
+      },
+      immediate: true
+    }
   }
 }
 </script>
@@ -206,6 +216,15 @@ export default {
 .list-complete-item {
   transition: all 1s;
   display: block;
+}
+
+.next {
+  transition: 0.3s;
+
+  &:disabled {
+    background: #bec0c3 !important;
+    border-color: #bec0c3 !important;
+  }
 }
 
 .question__parent {
