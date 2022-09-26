@@ -7,7 +7,7 @@
         </nuxt-link>
         <div class="d-flex align-center">
           <div class="nav-link">
-            <nuxt-link to="/company">For company</nuxt-link>
+            <nuxt-link to="/platform/profile/company">For company</nuxt-link>
           </div>
           <div class="nav-link">
             <nuxt-link to="/company">For developers</nuxt-link>

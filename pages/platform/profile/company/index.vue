@@ -62,7 +62,7 @@
               </button>
             </div>
             <div class="dev__list__table mt-11">
-              <div class="table__header mb-4 pb-5 d-flex align-center justify-space-between">
+              <div class="table__header mb-4 d-flex align-center justify-space-between">
                 <div class="col__name mr-8">
                   №
                 </div>
@@ -110,16 +110,21 @@
                   </v-col>
                 </v-row>
               </div>
-              <div class="table__row pb-6 mb-6">
+              <nuxt-link to="/platform/profile/developer" v-for="dev in 5" :key="dev" class="table__row pt-6 mb-6">
                 <div class="d-flex align-center justify-space-between">
                   <div class="row__name mr-8">
-                    1
+                    {{dev}}
                   </div>
                   <v-row>
                     <v-col
                       cols="2"
-                      class="row__name">
-                      Art-er
+                      class="row__name employ__avatar d-flex align-center">
+                      <img style="width: 40px; height: 40px; object-fit: cover" src="@/static/user1.png"
+                           class="rounded-circle" alt="">
+                      <div class="ml-2 d-flex flex-column ">
+                        <p class="mb-0 pb-1">Art-er</p>
+                        <span>3 month </span>
+                      </div>
                     </v-col>
                     <v-col
                       cols="10"
@@ -153,24 +158,27 @@
                         <v-col
                           cols="2"
                           class="row__name text-end">
-                          Busy 3 months
+                          <div class="dev__status busy__status">
+                            Busy 3 months
+                          </div>
                         </v-col>
                       </v-row>
                     </v-col>
                   </v-row>
                 </div>
-                <div class="d-flex align-center">
-                  <div class="row__name mr-8">
+                <div class="d-flex align-center mt-6">
+                  <div class="row__name mr-8 opacity-0">
                     1
                   </div>
-                  <div class="stack__technology">
-                    <p>Technology stack</p>
-                    <div class="stack">
-                      Python
+                  <div class="stack__technology d-flex align-center">
+                    <p class="mr-2">Technology stack</p>
+                    <div class="stack px-4 py-1 mr-3" v-for="stack in 10" :key="stack">
+                      Python {{ stack }}
                     </div>
+
                   </div>
                 </div>
-              </div>
+              </nuxt-link>
             </div>
           </v-container>
         </div>

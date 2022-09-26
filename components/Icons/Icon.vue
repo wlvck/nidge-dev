@@ -18,6 +18,11 @@ import Apple from "@/components/Icons/auth/Apple";
 import Logout from "@/components/Icons/Index/Logout";
 import Bell from "@/components/Icons/Index/Bell";
 import EditButton from "@/components/Icons/account/EditButton";
+import Download from "@/components/Icons/account/Download";
+import Copy from "@/components/Icons/account/Copy"
+import Delete from "@/components/Icons/account/Delete";
+import Edit from "@/components/Icons/account/Edit";
+
 export default {
   name: "Icon",
   props: {
@@ -39,7 +44,11 @@ export default {
     Apple,
     Logout,
     Bell,
-    EditButton
+    EditButton,
+    Download,
+    Copy,
+    Delete,
+    Edit
   }
 }
 </script>

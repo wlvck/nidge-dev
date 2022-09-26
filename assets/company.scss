@@ -12,6 +12,93 @@
   color: #00489D;
 }
 
+.employ__avatar {
+  p {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+    color: #131313;
+  }
+
+  span {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+    color: #7E7E7E;
+  }
+}
+
+.dev__list__table {
+  .table__row {
+    text-decoration: none;
+    color: black;
+    transition: 0.1s;
+    display: block;
+    border-top: 1px solid rgba(219, 218, 234, 0.3);
+
+    &:hover {
+      background: #f9f9f9;
+    }
+  }
+}
+
+.control__option {
+  button {
+    background: #F2F4F7;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 135%;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: #00489D;
+  }
+
+  .delete {
+    color: #FF3333;
+  }
+}
+
+.dev__status {
+  border-radius: 4px;
+  display: inline-block;
+  font-weight: 400;
+  font-size: 14px;
+  padding: 2px 8px;
+  width: max-content;
+  line-height: 24px;
+}
+
+.busy__status {
+  color: #F6652F;
+  background: #FEF0EA;
+}
+
+.free__status {
+  color: #3D7C46;
+  background: #ECF2ED;
+}
+
+.stack__technology {
+  p {
+    font-weight: 400;
+    font-size: 12px;
+    text-align: center;
+    max-width: 70px;
+    line-height: 120%;
+    color: #7E7E7E;
+  }
+
+  .stack {
+    background: #E6EDF5;
+    border-radius: 50px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: #00489D;
+  }
+}
+
 .search__dev {
   input {
     background: #FFFFFF;
@@ -33,6 +120,59 @@
   color: #7E7E7E;
 }
 
-.table__header {
-  border-bottom: 1px solid rgba(219, 218, 234, 0.3);
+.v-slide-group__wrapper {
+  margin: 0 auto !important;
+  max-width: 1250px !important;
+}
+
+.account__tab {
+  padding-top: 32px;
+  .v-slide-group__wrapper {
+    .v-slide-group__content {
+      background: #E6EDF5;
+      border-radius: 8px;
+      align-items: center;
+      padding: 5px;
+      flex: unset;
+    }
+
+    .v-tab {
+      font-weight: 500;
+      font-size: 14px;
+      width: max-content;
+      max-width: unset;
+      min-width: unset;
+      line-height: 130%;
+      color: #1B1B1B;
+      padding: 7px 16px;
+    }
+
+    .v-tab--active {
+      background: #FFFFFF;
+      box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.12);
+      border-radius: 6px;
+      color: #2A353D;
+    }
+  }
+
+  .v-item-group {
+    margin-top: 16px;
+  }
+}
+
+.request__header {
+  p {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 130%;
+    letter-spacing: 0.02em;
+    color: #000000;
+  }
+
+  span {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+    color: #7E7E7E;
+  }
 }
