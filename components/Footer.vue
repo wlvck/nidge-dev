@@ -22,7 +22,7 @@
             professionalism</p>
         </div>
         <div class="d-flex align-end justify-end">
-          <div class="goToTop d-flex align-center justify-center">
+          <div @click="scrollToTop" class="goToTop d-flex align-center justify-center">
             <img src="@/static/goToTop.png" alt="">
           </div>
         </div>
@@ -44,7 +44,19 @@
 
 <script>
 export default {
-  name: "Footer"
+  name: "Footer",
+  data() {
+    return {}
+  },
+  methods: {
+    scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+      });
+    },
+  }
 }
 </script>
 
