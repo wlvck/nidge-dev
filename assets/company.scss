@@ -1,0 +1,38 @@
+.detail__name {
+  color: #7E7E7E;
+}
+
+.add__dev {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 135%;
+  border: 1px solid #00489D;
+  border-radius: 8px;
+  letter-spacing: 0.02em;
+  color: #00489D;
+}
+
+.search__dev {
+  input {
+    background: #FFFFFF;
+    border: 1px solid #CBCBCB;
+    border-radius: 8px;
+    width: 296px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 130%;
+    letter-spacing: 0.02em;
+    color: #DDDDDD;
+  }
+}
+
+.col__name {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  color: #7E7E7E;
+}
+
+.table__header {
+  border-bottom: 1px solid rgba(219, 218, 234, 0.3);
+}
