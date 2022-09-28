@@ -33,12 +33,12 @@
         </div>
         <div class="social">
           <h3>Sign in with social networks</h3>
-          <nuxt-link to="">
+          <button @click.prevent="authWithProvider('google')" class="btn" type="button">
             <icon icon-name="google"/>
-          </nuxt-link>
-          <nuxt-link to="">
+          </button>
+          <button @click.prevent="authWithProvider('facebook')" class="btn" type="button">
             <icon icon-name="facebook"/>
-          </nuxt-link>
+          </button>
           <nuxt-link to="">
             <icon icon-name="apple"/>
           </nuxt-link>
@@ -49,6 +49,7 @@
         >
           Log in
         </button>
+        <button class="btn" type="button" @click.prevent="$auth.logout()">Logout</button>
       </v-form>
     </div>
   </div>
@@ -58,7 +59,10 @@
 import Icon from '@/components/Icons/Icon'
 
 export default {
-  transition: 'fade',
+  transition: {
+    name: 'page',
+    mode: 'out-in'
+  },
   data: () => ({
     valid: false,
     password: '',
@@ -78,6 +82,11 @@ export default {
     Icon
   },
   methods: {
+    authWithProvider(name) {
+      this.$auth.loginWith(name).then((response)=>{
+        console.log(response)
+      })
+    },
     validate() {
       this.$refs.form.validate()
     },

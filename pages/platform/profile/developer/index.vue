@@ -257,6 +257,11 @@ import FeedbackSlider from "@/components/FeedbackSlider";
 
 export default {
   name: "_developer",
+  auth: false,
+  transition: {
+    name: 'page',
+    mode: 'out-in'
+  },
   components: {
     GoBack,
     Icon,

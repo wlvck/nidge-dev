@@ -189,6 +189,10 @@
 <script>
 export default {
   name: "index",
+  transition: {
+    name: 'page',
+    mode: 'out-in'
+  },
   components: {},
   data() {
     return {}

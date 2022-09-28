@@ -91,7 +91,11 @@
 import Icon from '@/components/Icons/Icon'
 import axios from 'axios'
 export default {
-  transition: 'fade',
+  auth: false,
+  transition: {
+    name: 'page',
+    mode: 'out-in'
+  },
   data: () => ({
     valid: false,
     password: '',

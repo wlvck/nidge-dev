@@ -370,6 +370,10 @@ export default {
       },
     },
   },
+  transition: {
+    name: 'page',
+    mode: 'out-in'
+  },
   name: "account",
   components: {
     GoBack,

@@ -158,6 +158,11 @@ export default {
     Icon,
     FeedbackSlider
   },
+  auth: false,
+  transition: {
+    name: 'page',
+    mode: 'out-in'
+  },
   data() {
     return {}
   },

@@ -50,6 +50,10 @@ export default {
     disabled: true,
     purpose: '',
   }),
+  transition: {
+    name: 'page',
+    mode: 'out-in'
+  },
   components: {
     GoBack
   },

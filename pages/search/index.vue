@@ -202,6 +202,11 @@
 import gsap from 'gsap'
 
 export default {
+  transition: {
+    name: 'page',
+    mode: 'out-in'
+  },
+  auth: false,
   name: "index",
   data() {
     return {

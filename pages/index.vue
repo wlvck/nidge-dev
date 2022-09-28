@@ -343,15 +343,23 @@ import FeedbackSlider from "@/components/FeedbackSlider";
 import Icon from '@/components/Icons/Icon'
 
 export default {
+  transition: {
+    name: 'page',
+    mode: 'out-in'
+  },
   name: 'Index',
   components: {
     FeedbackSlider,
     Icon
   },
+  auth: false,
   data() {
     return {
       query: ''
     }
+  },
+  mounted(){
+    console.log(this.$auth.user)
   },
   methods: {
     routerPush() {

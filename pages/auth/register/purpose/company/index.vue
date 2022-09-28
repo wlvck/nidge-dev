@@ -37,6 +37,10 @@
 
 <script>
 export default {
+  transition: {
+    name: 'page',
+    mode: 'out-in'
+  },
   name: "index",
   data() {
     return {

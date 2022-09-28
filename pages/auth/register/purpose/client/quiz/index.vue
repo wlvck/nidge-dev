@@ -70,6 +70,7 @@ export default {
     GoBack,
     Answer
   },
+  auth: false,
   data() {
     return {
       nextQuestion: true,
