@@ -1,7 +1,9 @@
 <template>
-  <div v-bind:style="styles" class="spinner spinner--circle-10">
-    <div v-bind:style="innerStyles" class="spinner-inner">
-      <div class="loader-xbox"></div>
+  <div :class="fullWidth ? 'd-flex align-center justify-center loading__container' : 'd-flex align-center justify-center'">
+    <div v-bind:style="styles" class="spinner spinner--circle-10">
+      <div v-bind:style="innerStyles" class="spinner-inner">
+        <div class="loader-xbox"></div>
+      </div>
     </div>
   </div>
 </template>
@@ -10,17 +12,18 @@ export default {
   name: 'Loading',
   props: {
     size: {
-      default: '40px'
-    }
+      default: '60px'
+    },
+    fullWidth: false
   },
   computed: {
-    innerStyles () {
+    innerStyles() {
       let size = parseInt(this.size)
       return {
         transform: 'scale(' + (size / 100) + ')'
       }
     },
-    styles () {
+    styles() {
       return {
         width: this.size,
         height: this.size
@@ -30,17 +33,28 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.spinner{
+.loading__container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.66);
+}
+
+.spinner {
   display: flex;
   justify-content: center;
   align-items: center;
+
   * {
     line-height: 0;
     box-sizing: border-box;
   }
 }
-.spinner-inner
-{
+
+.spinner-inner {
   width: 100px;
   height: 100px;
   flex-shrink: 0;
@@ -49,7 +63,7 @@ export default {
 .loader-xbox, .loader-xbox:before, .loader-xbox:after {
   position: absolute;
   border: 3px solid transparent;
-  border-top: 3px solid #139DEB;
+  border-top: 3px solid #F6652F;
   border-radius: 50%;
   animation: rotate linear infinite;
   content: '';
@@ -66,7 +80,7 @@ export default {
   width: 75px;
   top: 10px;
   left: 10px;
-  border-top: 3px solid #139DEB;
+  border-top: 3px solid #F6652F;
   animation-duration: 10s;
 }
 
@@ -75,7 +89,7 @@ export default {
   width: 50px;
   top: 22px;
   left: 22px;
-  border-top: 3px solid #139DEB;
+  border-top: 3px solid #F6652F;
   animation-duration: 4s;
 }
 

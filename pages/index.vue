@@ -341,6 +341,7 @@
 <script>
 import FeedbackSlider from "@/components/FeedbackSlider";
 import Icon from '@/components/Icons/Icon'
+import Loading from "@/components/utils/Loading";
 
 export default {
   transition: {
@@ -350,7 +351,8 @@ export default {
   name: 'Index',
   components: {
     FeedbackSlider,
-    Icon
+    Icon,
+    Loading
   },
   auth: false,
   data() {
@@ -358,7 +360,7 @@ export default {
       query: ''
     }
   },
-  mounted(){
+  mounted() {
     console.log(this.$auth.user)
   },
   methods: {
