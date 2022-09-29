@@ -2,7 +2,8 @@ import quiz from "@/pages/auth/register/purpose/client/quiz";
 import answer from "@/components/utils/Quiz/Answer";
 
 export const state = () => ({
-  quiz__answers: []
+  quiz__answers: [],
+  registerCredentials: {}
 })
 
 
@@ -18,6 +19,9 @@ export const mutations = {
       state.quiz__answers.push(quiz__answer)
     }
   },
+  register(state, credentials) {
+    state.registerCredentials = credentials
+  }
 }
 
 export const actions = {}

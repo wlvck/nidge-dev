@@ -360,9 +360,6 @@ export default {
       query: ''
     }
   },
-  mounted() {
-    console.log(this.$auth.user)
-  },
   methods: {
     routerPush() {
       this.$nuxt.$options.router.push({

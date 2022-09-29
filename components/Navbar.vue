@@ -10,7 +10,7 @@
             <nuxt-link to="/platform/profile/company">For company</nuxt-link>
           </div>
           <div class="nav-link">
-            <nuxt-link to="/company">For developers</nuxt-link>
+            <nuxt-link to="/platform/profile/developer">For developers</nuxt-link>
           </div>
           <div v-show="!authorized">
             <nuxt-link
@@ -57,6 +57,8 @@ export default {
   },
   mounted() {
     this.authorized = !!localStorage.getItem('user')
+  },
+  computed: {
   }
 }
 </script>

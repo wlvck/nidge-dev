@@ -4,7 +4,7 @@
       <v-form
         class="auth__form"
         ref="form"
-        @submit.prevent="register"
+        @submit.prevent="validate"
         v-model="valid"
         lazy-validation
       >
@@ -71,7 +71,7 @@
         </div>
         <button
           class="btn-primary"
-          @click.prevent="validate"
+          type="submit"
         >
           Continue
         </button>
@@ -90,6 +90,8 @@
 <script>
 import Icon from '@/components/Icons/Icon'
 import axios from 'axios'
+import {mapMutations} from "vuex";
+
 export default {
   auth: false,
   transition: {
@@ -120,14 +122,29 @@ export default {
     Icon
   },
   methods: {
-    register(){
-      this.validate()
-      axios.post('http://127.0.0.1:8000/api/auth/register')
-    },
+    ...mapMutations(['register']),
     validate() {
-      if (this.$refs.form.validate()) {
-        this.$nuxt.$router.push('/auth/register/purpose')
-      }
+      // if (this.$refs.form.validate()) {
+      //   this.$nuxt.$router.push({
+      //     path: '/auth/register/purpose', params: {
+      //       credentials: {
+      //         first_name: this.firstname,
+      //         last_name: this.lastname,
+      //         password: this.password,
+      //         email: this.email
+      //       }
+      //     }
+      //   })
+      // }
+      this.register( {
+        first_name: this.firstname,
+        last_name: this.lastname,
+        password: this.password,
+        email: this.email
+      })
+      this.$router.push({
+        path: '/auth/register/purpose',
+      })
     },
   },
 }

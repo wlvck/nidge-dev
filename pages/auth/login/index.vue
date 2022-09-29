@@ -5,6 +5,7 @@
         class="auth__form"
         ref="form"
         v-model="valid"
+        @submit.prevent="login"
         lazy-validation
       >
         <h2 class="form__title">Hi, welcome back</h2>
@@ -45,11 +46,9 @@
         </div>
         <button
           class="btn-primary"
-          @click.prevent="validate"
         >
           Log in
         </button>
-        <button class="btn" type="button" @click.prevent="$auth.logout()">Logout</button>
       </v-form>
     </div>
   </div>
@@ -82,9 +81,16 @@ export default {
     Icon
   },
   methods: {
+    login() {
+      this.$axios.$post('/auth/login', {
+        password: this.password,
+        email: this.email
+      }).then(({data}) => {
+        localStorage.setItem('TOKEN', data.token)
+      })
+    },
     authWithProvider(name) {
-      this.$auth.loginWith(name).then((response)=>{
-        console.log(response)
+      this.$auth.loginWith(name).then((response) => {
       })
     },
     validate() {
