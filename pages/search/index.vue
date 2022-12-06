@@ -145,7 +145,7 @@
                     <img src="@/static/user1.png" alt="">
                     <div class="static__title">{{ dev.title }}</div>
                   </div>
-                  <img class="header__logo" src="@/static/logo.png" alt="">
+<!--                  <img class="header__logo" src="@/static/logo.png" alt="">-->
                 </div>
                 <div class="card__main mt-5">
                   <v-row>
@@ -221,16 +221,16 @@ export default {
           title: 'Kanagat',
         },
         {
-          title: 'Meirzhan',
+          title: 'Sultanbek',
         },
         {
-          title: 'Sergey',
+          title: 'Erasyl',
         },
         {
           title: 'Sayat',
         },
         {
-          title: 'Djavani',
+          title: 'Almas',
         },
         {
           title: 'Almas',
