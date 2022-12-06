@@ -46,7 +46,7 @@
                       fill="#F6652F"/>
                   </svg>
 
-                  Nidge dev
+                  Beyond Brands
                 </div>
                 <v-card-title class="py-0 px-0 mb-2">
                   <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
